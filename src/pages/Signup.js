@@ -8,7 +8,7 @@ const Signup = () => {
   const confirmPassword = useWatch({ control, name: "confirmPassword" });
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
-
+console.log(password)
   useEffect(() => {
     if (
       password !== undefined &&
