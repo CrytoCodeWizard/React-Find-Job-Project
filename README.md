@@ -3,5 +3,5 @@
 
 <ul>
 <li>OverView</li>
-<li>Autjentication with firebase use createAsyncThunk (redux) becuase firebase is async system </li>
+<li>authentication with firebase use createAsyncThunk (redux) becuase firebase is async system the i can not use RTK</li>
 <ul/>
