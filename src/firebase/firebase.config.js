@@ -1,3 +1,4 @@
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -6,12 +7,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAZ7E5VugZ3Yq5XtM9r4MAizLaSB2iflgk",
-  authDomain: "jobbox-66702.firebaseapp.com",
-  projectId: "jobbox-66702",
-  storageBucket: "jobbox-66702.appspot.com",
-  messagingSenderId: "419066753640",
-  appId: "1:419066753640:web:8549166907a3c9cdab81dd"
+  apiKey: "AIzaSyC2Xa-FLgWNFEKYDTrgjzDyWAGP_fuJVVU",
+  authDomain: "jobbox-7d1f3.firebaseapp.com",
+  projectId: "jobbox-7d1f3",
+  storageBucket: "jobbox-7d1f3.appspot.com",
+  messagingSenderId: "518835470324",
+  appId: "1:518835470324:web:9dadf58695ab42186683a1"
 };
 
 // Initialize Firebase

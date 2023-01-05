@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import loginImage from "../assets/login.svg";
 import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { createUser } from "../features/auth/authSlice";
+
 const Signup = () => {
   const { handleSubmit, register, reset, control } = useForm();
   const password = useWatch({ control, name: "password" });
   const confirmPassword = useWatch({ control, name: "confirmPassword" });
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
-console.log(password)
+   const dispatch = useDispatch();
+
+
   useEffect(() => {
     if (
       password !== undefined &&
@@ -25,6 +30,10 @@ console.log(password)
 
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(createUser({email:data.email,password:data.password}))
+
+
+
   };
 
   return (
