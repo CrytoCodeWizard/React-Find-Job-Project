@@ -2,6 +2,6 @@
 
 
 <ul>
-<li>OverView<li/>
+<li>OverView</li>
 <li>Autjentication with firebase use createAsyncThunk (redux) becuase firebase is async system </li>
 <ul/>
