@@ -29,9 +29,17 @@ initialState,
 
 
 reducers:{
+
  logout:(state) => {
    state.email=""
- } 
+ },
+ setUser:(state,{payload})=>{
+   state.email=payload
+   state.isLoading=false
+
+
+ }
+
 },
 
 extraReducers: (builder) => {
@@ -82,5 +90,5 @@ extraReducers: (builder) => {
 },
 });
 
-export const {logout}=authSlice.actions
+export const {logout,setUser}=authSlice.actions
 export default authSlice.reducer;
