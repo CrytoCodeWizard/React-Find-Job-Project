@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import { setUser } from "./features/auth/authSlice";
 import auth from "./firebase/firebase.config";
 import routes from "./routes/routes";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -24,8 +25,9 @@ useEffect(()=>{
 
   return (
     <>
+    <Toaster/>
       <RouterProvider router={routes} />
-    </>
+   </>
   );
 }
 

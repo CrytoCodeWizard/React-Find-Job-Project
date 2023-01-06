@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import {useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom";
 import loginImage from "../assets/login.svg";
-import { loginUser } from "../features/auth/authSlice";
+import { googleLogin, loginUser } from "../features/auth/authSlice";
+
+
 const Login = () => {
   const { register, handleSubmit, reset } = useForm();
-  const {isLoading,email}=useSelector(state=>state.auth)
+  const {isLoading,email,isError,error}=useSelector(state=>state.auth)
   const navigate = useNavigate();
   const dispatch=useDispatch()
 
@@ -15,13 +18,26 @@ const Login = () => {
     dispatch(loginUser({email,password}))
   };
 
-
+  const handleGoogleLogin =()=>{
+    dispatch(googleLogin())
+  }
+  
 useEffect(() => {
   if(!isLoading && email){
     navigate("/")
 
   }
 }, [email,isLoading]);
+
+
+useEffect(() => {
+  if(isError){
+   toast.error(error)
+
+  }
+}, [isError,error]);
+
+
 
 
 
@@ -52,6 +68,7 @@ useEffect(() => {
                 />
               </div>
               <div className='relative !mt-8'>
+               
                 <button
                   type='submit'
                   className='font-bold text-white py-3 rounded-full bg-primary w-full'
@@ -70,6 +87,13 @@ useEffect(() => {
                   </span>
                 </p>
               </div>
+              <button
+               onClick={handleGoogleLogin}
+                  type='button'
+                  className='font-bold text-white py-3 rounded-full bg-primary w-full'
+                >
+                  login with google
+                </button>
             </div>
           </form>
         </div>

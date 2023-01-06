@@ -1,5 +1,5 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import auth from '../../firebase/firebase.config';
 
 
@@ -15,12 +15,20 @@ const initialState={
 export const createUser= createAsyncThunk('auth/createUser',async({email,password})=>{
     const data = await createUserWithEmailAndPassword(auth, email, password);
     return data.user.email;
-})
+});
 
 export const loginUser= createAsyncThunk('auth/loginUser',async({email,password})=>{
     const data = await signInWithEmailAndPassword(auth, email, password);
     return data.user.email;
-})
+});
+
+export const googleLogin= 
+createAsyncThunk('auth/googleLogin',
+async()=>{
+   const provider = new GoogleAuthProvider()
+   const data =await signInWithPopup(auth,provider)
+   return data.user.email
+});
 
 
 const authSlice = createSlice({
@@ -79,6 +87,7 @@ extraReducers: (builder) => {
     state.isError=true;
     state.error=action.error.message
  })
+ 
 
 
  

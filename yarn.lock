@@ -5306,6 +5306,11 @@
     "merge2" "^1.4.1"
     "slash" "^3.0.0"
 
+"goober@^2.1.10":
+  "integrity" "sha512-5SS2lmxbhqH0u9ABEWq7WPU69a4i2pYcHeCxqaNq6Cw3mnrF0ghWNM4tEGid4dKy8XNIAUbuThuozDHHKJVh3A=="
+  "resolved" "https://registry.npmjs.org/goober/-/goober-2.1.11.tgz"
+  "version" "2.1.11"
+
 "gopd@^1.0.1":
   "integrity" "sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA=="
   "resolved" "https://registry.npmjs.org/gopd/-/gopd-1.0.1.tgz"
@@ -8159,6 +8164,13 @@
   "integrity" "sha512-u1cHOXujr+AsNBoeCtcCuRwPh87mXAgKtXqd3qTCBgNFYzVZLXjYgLcynORpAgqhe24r5scucR8+6gfWaXBtHQ=="
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.41.0.tgz"
   "version" "7.41.0"
+
+"react-hot-toast@^2.4.0":
+  "integrity" "sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA=="
+  "resolved" "https://registry.npmjs.org/react-hot-toast/-/react-hot-toast-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "goober" "^2.1.10"
 
 "react-icons@^4.7.1":
   "integrity" "sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw=="
