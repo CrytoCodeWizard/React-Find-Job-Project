@@ -21,6 +21,7 @@ const routes = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+    
       {
         path: "/jobs",
         element: <Jobs />,

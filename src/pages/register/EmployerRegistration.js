@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
+import { useRegisterMutation } from "../../features/auth/authApi";
 
 const EmployerRegistration = () => {
   const [countries, setCountries] = useState([]);
+  const [postUser,{isLoading,isError}]=useRegisterMutation();
 
   const { handleSubmit, register, control } = useForm();
   const term = useWatch({ control, name: "term" });
@@ -40,7 +42,7 @@ const EmployerRegistration = () => {
   }, []);
 
   const onSubmit = (data) => {
-    console.log(data);
+  postUser({...data, role:"employer"})
   };
 
   return (
@@ -57,7 +59,7 @@ const EmployerRegistration = () => {
           className='bg-secondary/20 shadow-lg p-10 rounded-2xl flex flex-wrap gap-3 max-w-3xl justify-between'
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1 className='w-full text-2xl text-primary mb-5'>Candidate</h1>
+          <h1 className='w-full text-2xl text-primary mb-5'>Employer</h1>
           <div className='flex flex-col w-full max-w-xs'>
             <label className='mb-2' htmlFor='firstName'>
               First Name
@@ -74,7 +76,7 @@ const EmployerRegistration = () => {
             <label className='mb-2' htmlFor='email'>
               Email
             </label>
-            <input type='email' id='email' disabled {...register("email")} />
+            <input type='email' id='email' {...register("email")} />
           </div>
           <div className='flex flex-col w-full max-w-xs'>
             <h1 className='mb-3'>Gender</h1>

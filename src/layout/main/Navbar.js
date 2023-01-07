@@ -35,6 +35,11 @@ signOut(auth).then(()=>{
           <Link to='/'>JobBox</Link>
         </li>
         <li>
+          <Link className='hover:text-primary' to='/home'>
+          Home
+          </Link>
+        </li>
+        <li>
           <Link className='hover:text-primary' to='/jobs'>
             Jobs
           </Link>
