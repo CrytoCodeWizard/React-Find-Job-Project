@@ -17,7 +17,7 @@ export const createUser= createAsyncThunk('auth/createUser',async({email,passwor
     return data.user.email;
 });
 
-export const getUser= createAsyncThunk('auth/gateUser',async(email)=>{
+export const getUser= createAsyncThunk('auth/getUser',async(email)=>{
     const res = await fetch(`http://localhost:5000/user/${email}`)
     const data=await res.json()
     
