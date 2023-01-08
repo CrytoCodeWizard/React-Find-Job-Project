@@ -8,15 +8,23 @@ const JobDetails = () => {
   const {id}=useParams()
   console.log(id)
   const {data,isLoading,isError}=useGetJobByIdQuery(id);
-  const {position} = data?.data || {};
+  const {position,overview} = data?.data || {};
   console.log(data)
 
 
   return (
     <div className='pt-14'>
-      <h1>this is job details</h1>
+    <div className="card w-96 bg-base-100 shadow-xl p-12">
+  <div className="card-body">
+    <h2 className="card-title">{position}</h2>
+    <p>{overview}</p>
+    <div className="card-actions justify-end">
+    <button className='border bg-primary text-white px-12 py-2'>Apply Now</button>
 
-      <button className='border bg-primary text-white px-12 py-2'>{position}</button>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
