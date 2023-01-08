@@ -28,10 +28,10 @@ useEffect(()=>{
 
 
   return (
-    <>
+    <div className="">
     <Toaster/>
       <RouterProvider router={routes} />
-   </>
+   </div>
   );
 }
 
