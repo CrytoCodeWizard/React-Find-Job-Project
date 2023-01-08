@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../features/auth/authSlice";
 import { toast } from "react-hot-toast";
 
+
 const Signup = () => {
   const { handleSubmit, register, reset, control } = useForm();
   const password = useWatch({ control, name: "password" });
@@ -13,9 +14,10 @@ const Signup = () => {
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
-  const {isError,error}=useSelector(state=>state.auth)
+  const {user:{isLoading,email,isError,error},}=useSelector(state=>state.auth)
 
   useEffect(() => {
+
     if (
       password !== undefined &&
       password !== "" &&
@@ -38,7 +40,12 @@ const Signup = () => {
   };
 
 // check git push
+useEffect(() => {
+  if(!isLoading && email){
+    navigate("/")
 
+  }
+}, [email,isLoading]);
 
   useEffect(() => {
     if(isError){
