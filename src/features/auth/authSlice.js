@@ -20,7 +20,13 @@ export const createUser= createAsyncThunk('auth/createUser',async({email,passwor
 export const getUser= createAsyncThunk('auth/gateUser',async(email)=>{
     const res = await fetch(`http://localhost:5000/user/${email}`)
     const data=await res.json()
-    return data.data;
+    
+    if(data.status){
+      return data;
+    }
+    return email
+    
+    
 });
 
 export const loginUser= createAsyncThunk('auth/loginUser',async({email,password})=>{
@@ -103,7 +109,12 @@ extraReducers: (builder) => {
  })
  .addCase(getUser.fulfilled,(state, { payload })=>{
     state.isLoading=false;
-    state.user=payload;
+    if(payload.status){
+      state.user=payload.data;
+    }else{
+      state.user.email=payload;
+    }
+
     state.isError=false;
     state.error=""
  })
