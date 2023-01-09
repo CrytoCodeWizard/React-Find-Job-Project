@@ -27,7 +27,4 @@
 <li>Google login Rejected  </li>
 </ul>
 
-
-
-
-<h4 style="background-color:crimson; >React</h4>
+<h4 style="background-color:red; >React</h4>
