@@ -10,10 +10,10 @@
 <li>if do not register get a Getstart </li>
 <li>Employer post job</li>
 <li>user get job </li>
-<ul/>
+</ul>
 
 
 <ul>
 <li>projects Some Problem</li>
 <li>new user login but he see dashboard (refresh error) </li>
-<ul/>
+</ul>
