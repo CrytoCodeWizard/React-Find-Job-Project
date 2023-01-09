@@ -23,7 +23,6 @@
 
 
 <ul>
-<h4>Projects Some Problem</h4>
-<li>new user login but he see dashboard (refresh error) </li>
+<h4>Projects Some Problem I am try to solve this </h4>
 <li>Google login Rejected  </li>
 </ul>
