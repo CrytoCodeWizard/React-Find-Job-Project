@@ -2,7 +2,7 @@
 
 
 <ul>
-<li>Done frojects OverView</li>
+<h1>Done frojects OverView</h1>
 <li>authentication with firebase use createAsyncThunk (redux) becuase firebase is async system the i can not use RTK</li>
 <li>error handle with react-hot-toast</li>
 <li>Store data in server becuase this is use for register role checkup</li>
@@ -14,6 +14,6 @@
 
 
 <ul>
-<li>projects Some Problem</li>
+<h1>projects Some Problem</h1>
 <li>new user login but he see dashboard (refresh error) </li>
 </ul>
