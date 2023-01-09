@@ -10,11 +10,11 @@
 <li>if do not register get a Getstart </li>
 <li>Employer post job</li>
 <li>user get job </li>
-<ul>
-
 <li>Apply job </li>
+
+<ul>
 <li>Employer can not apply she see toast error message</li>
-<li> </li>
+<li>If user want to apply job must be register candidate from</li>
 
 </ul>
 
