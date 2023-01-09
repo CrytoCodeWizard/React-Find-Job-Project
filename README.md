@@ -1,7 +1,7 @@
 <h6>live link : https://jobboxrtk.netlify.app/<h6/>
 
 
-<ul>
+<ol>
 <h4>Done Projects OverView</h4>
 <li>authentication with firebase use createAsyncThunk (redux) becuase firebase is async system the i can not use RTK</li>
 <li>error handle with react-hot-toast</li>
@@ -10,7 +10,9 @@
 <li>if do not register get a Getstart </li>
 <li>Employer post job</li>
 <li>user get job </li>
-</ul>
+<li>Apply job </li>
+
+</ol>
 
 
 <ul>
