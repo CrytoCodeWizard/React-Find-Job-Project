@@ -11,12 +11,14 @@ const jobApi=apiSlice.injectEndpoints({
                 body:data,
 
             }),
+            invalidatesTags:["Jobs"]
           
         }),
        getJob:builder.query({
             query:()=>({
                 url:"/jobs",
             }),
+            providesTags:["Jobs"]
         }),
        getJobById:builder.query({
             query:(id)=>({

@@ -26,7 +26,7 @@ signOut(auth).then(()=>{
 
   return (
     <nav
-      className={`h-14 fixed w-full z-[999] ${
+      className={`h-14 w-full z-[999] ${
         pathname === "/" ? null : "bg-white"
       }`}
     >
