@@ -4,7 +4,7 @@ import { FiTrash } from "react-icons/fi";
 import { usePostJobMutation } from "../../features/api/job/jobApi";
 
 const AddJob = () => {
-  const { handleSubmit, register, control } = useForm();
+  const { handleSubmit, register, control,reset } = useForm();
   const[postJob,{isLoading,isError}]=usePostJobMutation()
   const {
     fields: resFields,
@@ -24,7 +24,8 @@ const AddJob = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    postJob({...data,applicants:[],queries:[]})
+    postJob({...data,applicants:[],queries:[]});
+    reset()
   };
 
   return (

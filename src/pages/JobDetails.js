@@ -1,18 +1,25 @@
-import React from "react";
+import React,{useState} from "react";
 import { Navigate, useNavigate, useParams} from "react-router-dom";
-import { useGetJobByIdQuery } from "../features/api/job/jobApi";
+import { 
+  useApplyJobMutation,
+  useGetJobByIdQuery, 
+  useQuestionMutation,
+   useReplyMutation 
+} from "../features/api/job/jobApi";
 import { BsArrowRightShort, BsArrowReturnRight } from "react-icons/bs";
+import { useFieldArray, useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 
-
-
 const JobDetails = () => {
   const {id}=useParams()
-  console.log(id);
+  const [reply,setReply]=useState("")
   const navigate=useNavigate()
+  const { handleSubmit, register,reset } = useForm();
   const {user}=useSelector(state=>state.auth)
-  const {data,isLoading,isError}=useGetJobByIdQuery(id);
+  const {data,isLoading,isError}=useGetJobByIdQuery(id,{pollingInterval:500});
+  
+  const [sendQuestion]=useQuestionMutation(id)
   const {
     companyName,
     position,
@@ -27,12 +34,17 @@ const JobDetails = () => {
     overview,
     queries,
     _id,
-  
-  
-  
-  
   } = data?.data || {};
-  console.log(data)
+  const [apply]=useApplyJobMutation()
+  const [sentReply]=useReplyMutation()
+  
+  
+
+
+
+
+
+
 
 const handleApply=()=>{
   if(user.role ==="employer"){
@@ -49,11 +61,41 @@ return;
   const data ={
     userId:user._id,
     email:user.email,
-    jobId:_id
+    jobId:_id,
   }
-  console.log(data)
+
+apply(data)
+ console.log(data)
+
+ 
 
 }
+
+const handleQuestion =(data)=>{
+
+  const  question={
+    ...data,
+    userId:user._id,
+    email:user.email,
+    jobId:_id
+  }
+  sendQuestion(question)
+  reset()
+}
+
+const handleReply=(id)=>{
+  const data={
+    reply,
+    userId:id,
+  }
+sentReply(data)
+
+
+
+
+}
+
+
 
 
 
@@ -114,9 +156,14 @@ return;
           <h1 className='text-xl font-semibold text-primary mb-5'>
             General Q&A
           </h1>
-          <div className='text-primary my-2'>
+
+
+
+
+   <div className='text-primary my-2'>
             {queries?.map(({ question, email, reply, id }) => (
-              <div>
+              
+               <div>
                 <small>{email}</small>
                 <p className='text-lg font-medium'>{question}</p>
                 {reply?.map((item) => (
@@ -125,32 +172,49 @@ return;
                   </p>
                 ))}
 
-                <div className='flex gap-3 my-5'>
-                  <input placeholder='Reply' type='text' className='w-full' />
+               { user.role==='employer' && <div className='flex gap-3 my-5'>
+                  <input placeholder='Reply' 
+                  type='text' 
+                  onBlur={(e)=>setReply(e.target.value)}
+                  
+                  
+                  className='w-full' />
                   <button
+                  onClick={()=>handleReply(id)}
                     className='shrink-0 h-14 w-14 bg-primary/10 border border-primary hover:bg-primary rounded-full transition-all  grid place-items-center text-primary hover:text-white'
                     type='button'
                   >
                     <BsArrowRightShort size={30} />
                   </button>
-                </div>
+                </div>}
               </div>
+
             ))}
           </div>
 
-          <div className='flex gap-3 my-5'>
+
+
+ {user?.role ==='candidate' && <form onSubmit={handleSubmit(handleQuestion)}>
+<div  className='flex gap-3 my-5'>
             <input
               placeholder='Ask a question...'
               type='text'
               className='w-full'
+              {...register("question")}
             />
             <button
               className='shrink-0 h-14 w-14 bg-primary/10 border border-primary hover:bg-primary rounded-full transition-all  grid place-items-center text-primary hover:text-white'
-              type='button'
+              type='submit'
             >
               <BsArrowRightShort size={30} />
             </button>
           </div>
+</form>}
+       
+
+
+
+
         </div>
       </div>
     </div>
