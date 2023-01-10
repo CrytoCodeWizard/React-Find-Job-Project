@@ -16,7 +16,8 @@
 <ul>
 <li>Employer can not apply she see toast error message</li>
 <li>If user want to apply job must be register candidate from</li>
-
+<li>if candidate apply job see dashboard</li>
+<li>candidate Can message employer reply</li>
 </ul>
 
 
