@@ -12,14 +12,14 @@
 <li>Employer post job</li>
 <li>user get job </li>
 <li>Apply job </li>
-<li> if Apply see Applied  </li>
+
 
 <ul>
 <li>Employer can not apply she see toast error message</li>
 <li>If user want to apply job must be register candidate from</li>
 <li>if candidate apply job see dashboard</li>
 <li>candidate Can message employer reply</li>
-
+<li> if Apply see Applied  </li>
 </ul>
 
 
