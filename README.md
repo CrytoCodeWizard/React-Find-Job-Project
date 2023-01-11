@@ -31,7 +31,15 @@
 <ul>
 <h4>Uodating </h4>
 <li>Google login Rejected  </li>
-<li>Employer see position applyed  </li>
+<li>Employer post all job see 
+<ul>
+
+<li> position off jobs   </li>
+
+
+<ul>
+
+</li>
 
 </ul>
 
