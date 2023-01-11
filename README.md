@@ -29,7 +29,7 @@
 
 
 <ul>
-<h4>Uodating </h4>
+<h4>Updating </h4>
 <li>Google login Rejected  </li>
 <li>Employer post all job see 
 <ul>
