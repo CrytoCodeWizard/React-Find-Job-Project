@@ -16,16 +16,21 @@
 <ul>
 <li>Employer can not apply she see toast error message</li>
 <li>If user want to apply job must be register candidate from</li>
-
+<li>if candidate apply job see dashboard</li>
+<li>candidate Can message employer reply</li>
 </ul>
 
 
 </ol>
 
 
+
 <ul>
-<h4>Projects Some Problem I am try to solve this </h4>
+<h4>Uodating </h4>
 <li>Google login Rejected  </li>
+<li>Employer see position applyed  </li>
+<li> </li>
+
 </ul>
 
 
