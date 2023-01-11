@@ -12,6 +12,7 @@
 <li>Employer post job</li>
 <li>user get job </li>
 <li>Apply job </li>
+<li> if Apply see Applied  </li>
 
 <ul>
 <li>Employer can not apply she see toast error message</li>
@@ -30,7 +31,6 @@
 <h4>Uodating </h4>
 <li>Google login Rejected  </li>
 <li>Employer see position applyed  </li>
-<li> if she Apply see Applied  </li>
 
 </ul>
 
