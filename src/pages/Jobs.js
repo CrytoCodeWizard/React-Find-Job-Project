@@ -1,12 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Loading from "../components/reusable/Loading";
 import { useGetJobQuery } from "../features/api/job/jobApi";
 
 const Jobs = () => {
   const navigate = useNavigate();
   const {data,isLoading,isError}=useGetJobQuery();
-  // const {position,compantName}=data.data || {}
-  console.log(data)
+  if(isLoading){
+    return <Loading/>
+  }
 
   return (
     <div className='pt-14'>

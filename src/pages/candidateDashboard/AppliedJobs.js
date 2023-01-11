@@ -7,7 +7,8 @@ import { useGetAppliedJobsQuery } from '../../features/api/job/jobApi';
 const AppliedJobs = () => {
     const {user:{email}}=useSelector(state=>state.auth);
     const {data,isLoading} =useGetAppliedJobsQuery(email);
-    console.log("paichi",data)
+  
+
 
     if(isLoading){
    return <Loading/>

@@ -32,7 +32,7 @@ signOut(auth).then(()=>{
     >
       <ul className='px-16 text-2xl mt-2 flex gap-3 h-full items-center'>
         <li className='flex-auto font-semibold text-2xl'>
-          <Link to='/'>JobBox.com</Link>
+          <Link to='/'>FindJob</Link>
         </li>
         <li>
           <Link className='hover:text-primary' to='/'>

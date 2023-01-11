@@ -1,23 +1,35 @@
 import React,{useState} from "react";
-import { Navigate, useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
 import { 
   useApplyJobMutation,
+  useGetAppliedJobsQuery,
   useGetJobByIdQuery, 
   useQuestionMutation,
    useReplyMutation 
 } from "../features/api/job/jobApi";
 import { BsArrowRightShort, BsArrowReturnRight } from "react-icons/bs";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
+import Loading from "../components/reusable/Loading";
 
 const JobDetails = () => {
   const {id}=useParams()
   const [reply,setReply]=useState("")
   const navigate=useNavigate()
+ 
   const { handleSubmit, register,reset } = useForm();
-  const {user}=useSelector(state=>state.auth)
+  const {user:{email,role,_id}}=useSelector(state=>state.auth)
   const {data,isLoading,isError}=useGetJobByIdQuery(id,{pollingInterval:500});
+  const {data:jobApply} =useGetAppliedJobsQuery(email);
+  
+ 
+
+
+
+
+
+
   
   const [sendQuestion]=useQuestionMutation(id)
   const {
@@ -33,8 +45,10 @@ const JobDetails = () => {
     responsibilities,
     overview,
     queries,
-    _id,
+ 
+
   } = data?.data || {};
+ 
   const [apply]=useApplyJobMutation()
   const [sentReply]=useReplyMutation()
   
@@ -47,25 +61,25 @@ const JobDetails = () => {
 
 
 const handleApply=()=>{
-  if(user.role ==="employer"){
+  if(role ==="employer"){
 toast.error("you need a candited account")
 return;
   };
 
 
-  if(user.role === ""){
+  if(role === ""){
     navigate('/register')
     return;
   }
   
   const data ={
-    userId:user._id,
-    email:user.email,
-    jobId:_id,
+    userId:_id,
+    email:email,
+    jobId:id,
   }
 
 apply(data)
- console.log(data)
+ toast.success('apply done')
 
  
 
@@ -75,9 +89,9 @@ const handleQuestion =(data)=>{
 
   const  question={
     ...data,
-    userId:user._id,
-    email:user.email,
-    jobId:_id
+    userId:_id,
+    email:email,
+    jobId:id
   }
   sendQuestion(question)
   reset()
@@ -95,7 +109,9 @@ sentReply(data)
 
 }
 
-
+if(isLoading){
+  return <Loading/>
+}
 
 
 
@@ -109,7 +125,14 @@ sentReply(data)
       <div className='space-y-5'>
         <div className='flex justify-between items-center mt-5'>
           <h1 className='text-xl font-semibold text-primary'>{position}</h1>
-          <button onClick={handleApply} className='btn'>Apply</button>
+         
+        
+      { (jobApply?.data?.length === 0) &&<button onClick={handleApply} className='btn'>Apply</button>}
+
+      { (jobApply?.data?.length > 0) &&<button  className='btn'>Applied</button>}
+   
+        
+        
         </div>
         <div>
           <h1 className='text-primary text-lg font-medium mb-3'>Overview</h1>
@@ -172,7 +195,7 @@ sentReply(data)
                   </p>
                 ))}
 
-               { user.role==='employer' && <div className='flex gap-3 my-5'>
+               { role==='employer' && <div className='flex gap-3 my-5'>
                   <input placeholder='Reply' 
                   type='text' 
                   onBlur={(e)=>setReply(e.target.value)}
@@ -194,7 +217,7 @@ sentReply(data)
 
 
 
- {user?.role ==='candidate' && <form onSubmit={handleSubmit(handleQuestion)}>
+ {role ==='candidate' && <form onSubmit={handleSubmit(handleQuestion)}>
 <div  className='flex gap-3 my-5'>
             <input
               placeholder='Ask a question...'

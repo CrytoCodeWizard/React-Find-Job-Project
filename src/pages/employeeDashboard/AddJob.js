@@ -1,5 +1,6 @@
 import React from "react";
 import { useFieldArray, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { FiTrash } from "react-icons/fi";
 import { usePostJobMutation } from "../../features/api/job/jobApi";
 
@@ -26,6 +27,7 @@ const AddJob = () => {
     console.log(data);
     postJob({...data,applicants:[],queries:[]});
     reset()
+    toast.success('added job')
   };
 
   return (
