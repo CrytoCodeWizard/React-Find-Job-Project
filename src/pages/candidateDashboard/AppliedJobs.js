@@ -1,12 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Loading from '../../components/reusable/Loading';
-import { useGetAppliedJobsQuery } from '../../features/api/job/jobApi';
+import { useGetAppliedJobsWithEmailQuery } from '../../features/api/job/jobApi';
+
+
 
 const AppliedJobs = () => {
-    const {user:{email}}=useSelector(state=>state.auth);
-    const {data,isLoading} =useGetAppliedJobsQuery(email);
+    const {user:{email}}=useSelector(state=>state.auth)
+    const {data,isLoading} =useGetAppliedJobsWithEmailQuery(email);
+    console.log(data)
   
 
 

@@ -8,6 +8,7 @@ import {
    useReplyMutation 
 } from "../features/api/job/jobApi";
 import { BsArrowRightShort, BsArrowReturnRight } from "react-icons/bs";
+import { FcManager } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
@@ -21,7 +22,7 @@ const JobDetails = () => {
   const { handleSubmit, register,reset } = useForm();
   const {user:{email,role,_id}}=useSelector(state=>state.auth)
   const {data,isLoading,isError}=useGetJobByIdQuery(id,{pollingInterval:500});
-  const {data:jobApply} =useGetAppliedJobsQuery(email);
+  const {data:jobApply} =useGetAppliedJobsQuery({email,jobId:id});
   
  
 
@@ -45,6 +46,7 @@ const JobDetails = () => {
     responsibilities,
     overview,
     queries,
+    applicants,
  
 
   } = data?.data || {};
@@ -120,11 +122,24 @@ if(isLoading){
     <div className='pt-14 grid grid-cols-12 gap-5'>
     <div className='col-span-9 mb-10'>
       <div className='h-80 rounded-xl overflow-hidden'>
-        <img className='h-full w-full object-cover' src="https://i.ibb.co/28fn6fy/1658660879874.jpg" alt='' />
+        <img className='w-full h-full object-cover' src="https://i.ibb.co/28fn6fy/1658660879874.jpg" alt='' />
       </div>
+     <div className="flex justify-start items-center mt-2">
+
+      <div className="text-2xl"><h1><FcManager/></h1></div>
+      <div className="text-2xl"> <h1>{applicants?.length} Applied</h1></div>
+
+
+     </div>
+
+
+
       <div className='space-y-5'>
         <div className='flex justify-between items-center mt-5'>
-          <h1 className='text-xl font-semibold text-primary'>{position}</h1>
+          <div className="flex justify-center items-center">
+            <h1 className='text-xl font-semibold text-primary'>{position}</h1>
+          </div>
+
          
         
       { (jobApply?.data?.length === 0) &&<button onClick={handleApply} className='btn'>Apply</button>}
