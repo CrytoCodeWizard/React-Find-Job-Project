@@ -13,12 +13,15 @@
 <li>user get job </li>
 <li>Apply job </li>
 
+
 <ul>
 <li>Employer can not apply she see toast error message</li>
 <li>If user want to apply job must be register candidate from</li>
 <li>if candidate apply job see dashboard</li>
 <li>candidate Can message employer reply</li>
+
 </ul>
+<li> if Apply see Applied  </li>
 
 
 </ol>
@@ -26,10 +29,17 @@
 
 
 <ul>
-<h4>Uodating </h4>
+<h4>Updating </h4>
 <li>Google login Rejected  </li>
-<li>Employer see position applyed  </li>
-<li> </li>
+<li>Employer post all job see 
+<ul>
+
+<li> position off jobs   </li>
+
+
+<ul>
+
+</li>
 
 </ul>
 
