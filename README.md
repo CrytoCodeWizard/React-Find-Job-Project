@@ -34,7 +34,7 @@
 <li>Employer post all job see (not complete)
 <ul>
 
-<li> position off jobs   </li>
+<li> position off job </li>
 
 
 <ul>
