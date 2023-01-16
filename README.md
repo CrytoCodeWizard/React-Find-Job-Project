@@ -1,4 +1,4 @@
-<h6>live link : https://jobboxrtk.netlify.app/<h6/>
+
 <h6> server code: https://github.com/mozahidahmed/jobbox-server-code/</h6>
 <h4 style="color:red;">React || Redux || Firebase || NodeJs || ExpressJS || MongoDB</h4>
 
@@ -31,10 +31,10 @@
 <ul>
 <h4>Updating </h4>
 <li>Google login Rejected  </li>
-<li>Employer post all job see 
+<li>Employer post all job see (not complete)
 <ul>
 
-<li> position off jobs   </li>
+<li> position off  </li>
 
 
 <ul>
