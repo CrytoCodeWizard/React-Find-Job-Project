@@ -2,10 +2,14 @@ import React from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FiTrash } from "react-icons/fi";
+import { useSelector } from "react-redux";
 import { usePostJobMutation } from "../../features/api/job/jobApi";
 
 const AddJob = () => {
-  const { handleSubmit, register, control,reset } = useForm();
+  const {user:{email}}=useSelector(state=>state.auth)
+  const { handleSubmit, register, control,reset } = useForm({ defaultValues:{
+    email,
+  }});
   const[postJob,{isLoading,isError}]=usePostJobMutation()
   const {
     fields: resFields,
@@ -39,6 +43,13 @@ const AddJob = () => {
         <h1 className='w-full text-2xl text-primary mb-5'>
           Add a new position
         </h1>
+     <div className="flex flex-col w-full max-w-xs">
+
+     <label className='mb-2' htmlFor='email'>
+              Email
+            </label>
+            <input disabled className="cursor-not-allowed" type='email' id='email' {...register("email")} />
+     </div>
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='position'>
             Position

@@ -29,6 +29,12 @@ const Sidebar = () => {
           >
           Applied Jobs
           </Link>}
+         {role==="employer" && <Link
+            className='hover:bg-primary hover:text-white mt-2 bg-primary/10 transition-all w-full block py-2 px-3 rounded-full'
+            to='managejobs'
+          >
+         ManagesJobs
+          </Link>}
         </li>
       </ul>
     </div>
