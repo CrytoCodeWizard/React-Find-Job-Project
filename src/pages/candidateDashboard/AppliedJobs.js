@@ -9,7 +9,7 @@ import { useGetAppliedJobsWithEmailQuery } from '../../features/api/job/jobApi';
 const AppliedJobs = () => {
     const {user:{email}}=useSelector(state=>state.auth)
     const {data,isLoading} =useGetAppliedJobsWithEmailQuery(email);
-    console.log(data)
+    console.log('applied job',data)
   
 
 

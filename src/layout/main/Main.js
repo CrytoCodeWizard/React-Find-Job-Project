@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import Footer from "../../pages/home/Footer";
 import Navbar from "./Navbar";
 
 const Main = () => {
@@ -14,6 +15,7 @@ const Main = () => {
         } max-w-[1600px] mx-auto`}
       >
         <Outlet />
+        <Footer/>
       </div>
     </div>
   );
