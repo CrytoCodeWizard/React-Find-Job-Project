@@ -21,7 +21,7 @@
 <li>candidate Can message employer reply</li>
 
 </ul>
-<li> if Apply see Applied  </li>
+<li> If Apply see Applied  </li>
 
 
 </ol>
