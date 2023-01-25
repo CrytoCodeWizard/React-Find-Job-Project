@@ -26,11 +26,11 @@ signOut(auth).then(()=>{
 
   return (
     <nav
-      className={`h-14 w-full z-[999] ${
+      className={`h-14 w-full sticky  top-0 z-[50] bg-white bottom-b-2 ${
         pathname === "/" ? null : "bg-white"
       }`}
     >
-      <ul className='px-16 text-2xl mt-2 flex gap-3 h-full items-center'>
+      <ul className='px-16 py-2 text-2xl mt-2 flex gap-4 h-full items-center'>
         <li className='flex-auto font-semibold text-2xl'>
           <Link to='/'>FindJob</Link>
         </li>
@@ -44,6 +44,22 @@ signOut(auth).then(()=>{
             Jobs
           </Link>
         </li>
+        <li>
+          <Link className='hover:text-primary' to='/team'>
+         Team
+          </Link>
+        </li>
+        <li>
+          <Link className='hover:text-primary' to='/Blog'>
+         Blog
+          </Link>
+        </li>
+        <li>
+          <Link className='hover:text-primary' to='/contact'>
+        Contact
+          </Link>
+        </li>
+       
 
         <li>
          { email?<button onClick={handleSignOut} className="">LogOut</button> 

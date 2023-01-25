@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import loginImage from "../assets/login.svg";
 import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +10,10 @@ import { toast } from "react-hot-toast";
 
 
 const Signup = () => {
+    useEffect(() => {
+    AOS.init({duration:2000})
+
+}, []);
   const { handleSubmit, register, reset, control } = useForm();
   const password = useWatch({ control, name: "password" });
   const confirmPassword = useWatch({ control, name: "confirmPassword" });
@@ -56,11 +62,11 @@ useEffect(() => {
   
   return (
     <div className='flex h-screen items-center pt-14'>
-      <div className='w-1/2'>
+      <div className='w-1/2' data-aos="zoom-in" >
         <img src={loginImage} className='h-full w-full' alt='' />
       </div>
       <div className='w-1/2 grid place-items-center'>
-        <div className='bg-[#FFFAF4] rounded-lg grid place-items-center p-10'>
+        <div className='bg-[#FFFAF4] rounded-lg grid place-items-center p-10' data-aos="zoom-in" >
           <h1 className='mb-10 font-medium text-2xl'>Sign up</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='space-y-3'>

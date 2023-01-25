@@ -22,6 +22,7 @@ const JobDetails = () => {
   const { handleSubmit, register,reset } = useForm();
   const {user:{email,role,_id}}=useSelector(state=>state.auth)
   const {data,isLoading,isError}=useGetJobByIdQuery(id,{pollingInterval:500});
+  
   const {data:jobApply} =useGetAppliedJobsQuery({email,jobId:id});
   
  
@@ -119,7 +120,7 @@ if(isLoading){
 
 
   return (
-    <div className='pt-14 grid grid-cols-12 gap-5'>
+    <div className='pt-14 px-12 grid grid-cols-12 gap-5'>
     <div className='col-span-9 mb-10'>
       <div className='h-80 rounded-xl overflow-hidden'>
         <img className='w-full h-full object-cover' src="https://i.ibb.co/28fn6fy/1658660879874.jpg" alt='' />

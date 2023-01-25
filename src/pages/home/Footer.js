@@ -11,11 +11,11 @@ const Footer = () => {
     return (
         <div>
             
-<footer class="bg-secondary mt-6 ">
+<footer class="bg-secondary mt-6 text-black">
     <div class="grid grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Company</h2>
-            <ul class="text-gray-500 dark:text-gray-400">
+            <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase ">Company</h2>
+            <ul class=" ">
                 <li class="mb-4">
                     <a href="#" class=" hover:underline">About</a>
                 </li>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
         <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Help center</h2>
-            <ul class="text-gray-500 dark:text-gray-400">
+            <ul class="">
                 <li class="mb-4">
                     <a href="#" class="hover:underline">Discord Server</a>
                 </li>
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
         <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Legal</h2>
-            <ul class="text-gray-500 dark:text-gray-400">
+            <ul class="">
                 <li class="mb-4">
                     <a href="#" class="hover:underline">Privacy Policy</a>
                 </li>
@@ -62,8 +62,8 @@ const Footer = () => {
             </ul>
         </div>
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Download</h2>
-            <ul class="text-gray-500 dark:text-gray-400">
+            <h2 class="mb-6 text-sm font-semibold uppercase dark:text-gray-400">Download</h2>
+            <ul class=" ">
                 <li class="mb-4">
                     <a href="#" class="hover:underline">iOS</a>
                 </li>

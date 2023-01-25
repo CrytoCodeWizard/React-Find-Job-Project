@@ -1,14 +1,21 @@
-import React, { useEffect } from "react";
+
+import React,{useEffect} from 'react';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import {useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom";
 import loginImage from "../assets/login.svg";
-import {  loginUser } from "../features/auth/authSlice";
+import { loginUser } from "../features/auth/authSlice";
 
 
 const Login = () => {
+    useEffect(() => {
+    AOS.init({duration:2000})
+
+}, []);
   const { register, handleSubmit, reset } = useForm();
   const {user:{isLoading,email,isError,error},}=useSelector(state=>state.auth)
   const navigate = useNavigate();
@@ -43,11 +50,11 @@ useEffect(() => {
 
   return (
     <div className='flex h-screen items-center'>
-      <div className='w-1/2'>
+      <div className='w-1/2' data-aos="zoom-in" >
         <img src={loginImage} className='h-full w-full' alt='' />
       </div>
-      <div className='w-1/2 grid place-items-center'>
-        <div className='bg-[#FFFAF4] rounded-lg grid place-items-center p-10'>
+      <div className='w-1/2 grid place-items-center'  >
+        <div  data-aos="zoom-in"className='bg-[#FFFAF4] rounded-lg grid place-items-center p-10'>
           <h1 className='mb-10 font-medium text-2xl'>Login</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='space-y-3'>

@@ -74,8 +74,8 @@ const Landing = () => {
   }, []);
 
   return (
-    <div ref={el} className='py-16'>
-      <div className='max-w-2xl h-[80vh] rounded-b-full absolute top-0 left-1/2 -translate-x-1/2 overflow-hidden z-0'>
+    <div ref={el} className='py-16 px-12'>
+      <div className='max-w-2xl mt-16 h-[80vh] rounded-t-full absolute top-0 left-1/2 -translate-x-1/2 overflow-hidden z-0'>
         <img
           id='hero1'
           src={hero1}
