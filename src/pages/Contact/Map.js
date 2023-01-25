@@ -19,14 +19,14 @@ const Map = () => {
           </div>
 
             <div className="" data-aos="zoom-in" >
-            <h1 class="mb-5 text-2xl font-bold">Good Job can Change life style</h1>
+            <h1 class="mb-5 text-2xl font-bold">Sylhet, Bangladesh</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum vel minus corrupti accusamus! Iusto, vel vitae tempora consequuntur ab sed, corrupti incidunt aliquam nisi est iure ipsa eum commodi veritatis ea ipsam quia delectus rem perspiciatis culpa voluptas dolorum. Officia, eum 
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum vel minus corrupti accusamus! Iusto, vel vitae tempora consequuntur ab sed, corrupti incidunt aliquam nisi est iure ipsa eum commodi veritatis ea ipsam quia delectus rem perspiciatis culpa voluptas dolorum. Officia, eum 
 
 
         
     </p>
-    <button className='btn mt-6 font-white'>GTag Location</button>
+    <button className='btn mt-6 font-white'>Tag Location</button>
          
             </div>
         
