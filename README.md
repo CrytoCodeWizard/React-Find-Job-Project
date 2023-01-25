@@ -1,6 +1,6 @@
 
 <h6> server code: https://github.com/mozahidahmed/jobbox-server-code/</h6>
-<h4 style="color:red;">React || Redux || Firebase || NodeJs || ExpressJS || MongoDB</h4>
+<h4 sbbtyle="color:red;">React || Redux || Firebase || NodeJs || ExpressJS || MongoDB</h4>
 
 <ol>
 <h4>Done Projects OverView</h4>
