@@ -30,8 +30,7 @@
 
 <ul>
 <h4>Updating </h4>
-<li>Google login Rejected  </li>
-<li>Employer post all job see (not complete)
+
 <ul>
 
 <li> position off comming </li>
