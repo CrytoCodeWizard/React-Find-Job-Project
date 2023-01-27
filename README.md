@@ -33,7 +33,7 @@
 
 <ul>
 
-<li> position off comming </li>
+
 
 
 <ul>
