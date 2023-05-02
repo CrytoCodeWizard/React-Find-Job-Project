@@ -33,7 +33,6 @@ const Map = () => {
         </div>
 
 
-      
 
 
 

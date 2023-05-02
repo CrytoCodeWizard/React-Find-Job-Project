@@ -45,9 +45,7 @@ signOut(auth).then(()=>{
           </Link>
         </li>
         <li>
-          <Link className='hover:text-primary' to='/team'>
-         Team
-          </Link>
+         
         </li>
         <li>
           <Link className='hover:text-primary' to='/Blog'>

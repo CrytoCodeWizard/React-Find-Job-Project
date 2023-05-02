@@ -23,12 +23,26 @@ const jobApi=apiSlice.injectEndpoints({
            
         }),
 
+
+
+
+
+
+
+
        getJob:builder.query({
             query:()=>({
                 url:"/jobs",
             }),
             providesTags:["Jobs"]
         }),
+
+
+
+
+
+
+
        getJobById:builder.query({
             query:(id)=>({
                 url:`/job/${id}`,
@@ -36,6 +50,7 @@ const jobApi=apiSlice.injectEndpoints({
             providesTags:["Job"]
 
         }),
+        
      
        getAppliedJobs:builder.query({
             query:({email,jobId})=>({

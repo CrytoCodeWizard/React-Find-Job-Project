@@ -14,7 +14,6 @@ import CandidateDashboard from "../pages/candidateDashboard/CandidateDashboard";
 import AppliedJobs from "../pages/candidateDashboard/AppliedJobs";
 import ManageJobs from "../pages/employeeDashboard/ManageJobs";
 import Blog from "../features/Blog/Blog";
-import Team from "../pages/Team/Team";
 import Contact from "../pages/Contact/Contact";
 
 const routes = createBrowserRouter([
@@ -35,10 +34,7 @@ const routes = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
-      {
-        path: "/team",
-        element: <Team />,
-      },
+     
       {
         path: "/contact",
         element: <Contact />,
